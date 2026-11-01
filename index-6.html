@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Viensco Synergy Ltd – Quotes, Invoices & Purchase Orders</title>
+<meta name="theme-color" content="#161616">
+<link rel="icon" href="icon-192.png">
+<link rel="stylesheet" href="style.css">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Viensco Synergy">
+<style id="pgstyle"></style>
+</head>
+<body>
+<div id="splash"><img src="splash.jpg" alt="Viensco Synergy Ltd"></div>
+<header class="top noprint"><img src="icon-192.png" alt=""><div><b>Viensco Synergy Ltd</b><small>Quotes · Invoices · Purchase orders</small></div></header>
+<div class="bar noprint" id="installBar" hidden><p id="installMsg">Install Viensco Synergy Ltd on your phone or PC to use it offline.</p><button class="btn pri sm" id="installBtn">Install</button><button class="btn sm" id="installX" style="background:transparent;color:#fff;border-color:#555">Later</button></div>
+<div id="warn" class="warnbar noprint" hidden></div>
+<main>
+  <section class="view active" id="v-home"></section>
+  <section class="view" id="v-docs"></section>
+  <section class="view" id="v-cust"></section>
+  <section class="view" id="v-items"></section>
+  <section class="view" id="v-set"></section>
+  <section class="view" id="v-edit">
+    <div id="ed-top" class="noprint"></div>
+    <div id="ed-form" class="noprint"></div>
+    <div class="card noprint"><div class="grid2"><div class="f" style="margin:0"><label>PDF layout</label><select id="ed-style"><option value="branded">Branded header (built-in)</option><option value="letterhead">On my letterhead image</option></select></div>
+      <div class="f" style="margin:0"><label>Signature</label><select id="ed-sign"><option value="blue">Blue ink</option><option value="black">Black ink</option><option value="old">Earlier signature</option><option value="none">None – sign by hand</option></select></div></div>
+      <div class="hint">The preview below is what the PDF / image will look like. Use “Download PDF” or “Save image” at the top (works offline), or “Print” for a text-based PDF.</div></div>
+    <div id="sheetWrap"><div id="sheet"></div></div>
+  </section>
+</main>
+<nav class="tabs noprint">
+  <button data-tab="home" class="on"><span>🏠</span>Home</button>
+  <button data-tab="docs"><span>📄</span>Documents</button>
+  <button data-tab="cust"><span>👥</span>Customers</button>
+  <button data-tab="items"><span>📦</span>Items</button>
+  <button data-tab="set"><span>⚙️</span>Settings</button>
+</nav>
+<div id="modal" class="noprint" hidden><div class="mbg"></div><div class="msheet"><div class="mh"><b id="mt"></b><button id="mx" aria-label="Close">✕</button></div><div id="mb"></div></div></div>
+<div id="toast"></div>
+<script src="assets.js"></script>
+<script src="data.js"></script>
+<script src="core.js"></script>
+<script src="exporter.js"></script>
+<script src="ui.js"></script>
+<script>if("serviceWorker" in navigator){window.addEventListener("load",function(){navigator.serviceWorker.register("sw.js").catch(function(){})})}</script>
+</body>
+</html>
