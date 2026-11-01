@@ -57,7 +57,7 @@ const S = {
   docs: load('docs', []), ovr: load('ovr', {}), custom: load('custom', []), counters: load('counters', {}),
   cur: null, imp: load('imp', null)
 };
-if (S.settings.sign === true) S.settings.sign = 'blue'; else if (S.settings.sign === false) S.settings.sign = 'none';
+if (S.settings.sign === true || S.settings.sign === 'old') S.settings.sign = 'blue'; else if (S.settings.sign === false) S.settings.sign = 'none';
 if (!S.customers) { S.customers = clone(SAMPLE_CUSTOMERS); save('customers', S.customers); }
 if (!S.vendors) { S.vendors = clone(SAMPLE_VENDORS); save('vendors', S.vendors); }
 const persist = {
@@ -261,7 +261,7 @@ function sheetBody(d) {
   h += signHTML(d.type !== 'po');
   return h;
 }
-const SIGKEYS = { blue: 'signBlue', black: 'signBlack', old: 'sign' };
+const SIGKEYS = { blue: 'signBlue', black: 'signBlack' };
 function sigSrc() { const k = SIGKEYS[S.settings.sign]; return k ? IMG[k] : ''; }
 function signHTML(cust) {
   const s = S.settings;

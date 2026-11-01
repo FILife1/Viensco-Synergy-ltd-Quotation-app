@@ -1,6 +1,6 @@
 /* Viensco Synergy Ltd – offline cache. Bump CACHE whenever you upload new files. */
-const CACHE = 'viensco-synergy-v2';
-const FILES = ['./', 'index.html', 'style.css', 'assets.js', 'data.js', 'core.js', 'exporter.js', 'ui.js', 'manifest.webmanifest', 'icon-192.png', 'icon-512.png', 'splash.jpg'];
+const CACHE = 'viensco-synergy-v3';
+const FILES = ['./', 'index.html', 'style.css', 'assets.js', 'signatures.js', 'data.js', 'core.js', 'exporter.js', 'ui.js', 'manifest.json', 'icon-192.png', 'icon-512.png', 'splash.jpg'];
 // cache each file on its own, so one missing file can never break the install
 self.addEventListener('install', e => {
   e.waitUntil(caches.open(CACHE).then(c => Promise.all(FILES.map(f => c.add(f).catch(() => null)))).then(() => self.skipWaiting()));
